@@ -20,6 +20,7 @@ import io.ktor.client.engine.mock.*
 import kotlinx.coroutines.io.*
 import io.ktor.client.call.*
 
+// TODO not actually works
 class ApplicationTest {
     @Test
     fun testRoot() {

@@ -20,6 +20,7 @@ class PostsFetcher: PostsFetcherInterface {
     }
 
     override suspend fun get(id: Int): Post {
+        // TODO: try catch
         val post = client.get<Post>(
             scheme = SCHEME,
             host = HOST,

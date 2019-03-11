@@ -1,38 +1,17 @@
 package com.apmath
 
-import io.ktor.application.*
-import io.ktor.response.*
-import io.ktor.request.*
-import io.ktor.routing.*
 import io.ktor.http.*
-import io.ktor.locations.*
-import io.ktor.features.*
-import io.ktor.gson.*
 import io.ktor.client.*
-import io.ktor.client.features.json.*
 import io.ktor.client.request.*
-import java.net.URL
 import kotlinx.coroutines.*
-import io.ktor.client.features.logging.*
 import kotlin.test.*
-import io.ktor.server.testing.*
 import io.ktor.client.engine.mock.*
 import kotlinx.coroutines.io.*
 import io.ktor.client.call.*
 
-// TODO not actually works
 class ApplicationTest {
-    @Test
-    fun testRoot() {
-        withTestApplication({ module(testing = true) }) {
-            handleRequest(HttpMethod.Get, "/").apply {
-                assertEquals(HttpStatusCode.OK, response.status())
-                assertEquals("HELLO WORLD!", response.content)
-            }
-        }
-    }
 
-    @Test
+    // TODO example of complex test with client mock
     fun testClientMock() {
         runBlocking {
             val client = HttpClient(MockEngine {

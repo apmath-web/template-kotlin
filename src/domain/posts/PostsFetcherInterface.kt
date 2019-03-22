@@ -1,6 +1,6 @@
-package com.apmath.domain.posts
+package com.apmath.template.domain.posts
 
-import com.apmath.infrastructure.posts.Post
+import com.apmath.template.infrastructure.posts.Post
 
 interface PostsFetcherInterface {
     suspend fun get(id: Int): Post

@@ -1,8 +1,8 @@
-package com.apmath
+package com.apmath.template
 
-import com.apmath.application.v1.v1
-import com.apmath.domain.posts.PostsService
-import com.apmath.infrastructure.posts.PostsFetcher
+import com.apmath.template.application.v1.v1
+import com.apmath.template.domain.posts.PostsService
+import com.apmath.template.infrastructure.posts.PostsFetcher
 import io.ktor.application.*
 import io.ktor.routing.*
 import io.ktor.locations.*

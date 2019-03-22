@@ -1,7 +1,7 @@
-package com.apmath.application.v1.actions
+package com.apmath.template.application.v1.actions
 
-import com.apmath.application.v1.models.Post
-import com.apmath.domain.posts.PostsServiceInterface
+import com.apmath.template.application.v1.models.Post
+import com.apmath.template.domain.posts.PostsServiceInterface
 import io.ktor.application.ApplicationCall
 import io.ktor.response.respond
 

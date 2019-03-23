@@ -1,6 +1,6 @@
-package com.apmath.application.v1.actions
+package com.apmath.template.application.v1.actions
 
-import com.apmath.application.v1.models.Info
+import com.apmath.template.application.v1.models.Info
 import io.ktor.application.ApplicationCall
 import io.ktor.response.respond
 

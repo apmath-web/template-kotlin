@@ -1,3 +1,3 @@
-package com.apmath.application.v1.models
+package com.apmath.template.application.v1.models
 
 class Post(val postId: String, val postTitle: String)

@@ -1,6 +1,6 @@
-package com.apmath.infrastructure.posts
+package com.apmath.template.infrastructure.posts
 
-import com.apmath.domain.posts.PostsFetcherInterface
+import com.apmath.template.domain.posts.PostsFetcherInterface
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
 import io.ktor.client.features.json.GsonSerializer

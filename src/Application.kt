@@ -1,15 +1,15 @@
 package com.apmath.template
 
 import com.apmath.template.application.v1.v1
-import com.apmath.template.domain.services.PostsService
 import com.apmath.template.infrastructure.ServiceManager
 import com.apmath.template.infrastructure.ServiceManager.Companion.serviceManagerModule
-import com.apmath.template.infrastructure.fetchers.PostsFetcher
-import io.ktor.application.*
-import io.ktor.routing.*
-import io.ktor.locations.*
-import io.ktor.features.*
-import io.ktor.gson.*
+import io.ktor.application.Application
+import io.ktor.application.install
+import io.ktor.features.ContentNegotiation
+import io.ktor.features.DefaultHeaders
+import io.ktor.gson.gson
+import io.ktor.locations.Locations
+import io.ktor.routing.Routing
 import org.koin.Logger.slf4jLogger
 import org.koin.ktor.ext.Koin
 

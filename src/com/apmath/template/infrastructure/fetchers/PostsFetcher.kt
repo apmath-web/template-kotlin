@@ -8,7 +8,7 @@ import io.ktor.client.features.json.GsonSerializer
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.request.get
 
-class PostsFetcher: PostsFetcherInterface {
+class PostsFetcher : PostsFetcherInterface {
     // TODO: move client into another service
     val client: HttpClient = HttpClient(Apache) {
         install(JsonFeature) {

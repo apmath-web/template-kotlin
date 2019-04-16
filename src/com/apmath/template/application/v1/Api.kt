@@ -2,7 +2,7 @@ package com.apmath.template.application.v1
 
 import com.apmath.template.application.v1.actions.v1Info
 import com.apmath.template.application.v1.actions.v1Post
-import com.apmath.template.domain.posts.PostsServiceInterface
+import com.apmath.template.domain.services.PostsServiceInterface
 import io.ktor.application.call
 import io.ktor.routing.Routing
 import io.ktor.routing.get

@@ -8,10 +8,10 @@ import io.ktor.routing.Routing
 import io.ktor.routing.get
 import io.ktor.routing.route
 
-internal fun Routing.v1(postsService: PostsServiceInterface) {
+internal fun Routing.v1() {
 
     v1Info()
-    v1Post(postsService)
+    v1Post()
     // other route groups here
 }
 
@@ -24,11 +24,11 @@ private fun Routing.v1Info() {
     }
 }
 
-private fun Routing.v1Post(postsService: PostsServiceInterface) {
+private fun Routing.v1Post() {
 
     route("v1") {
         get("post") {
-            call.v1Post(postsService)
+            call.v1Post()
         }
     }
 }

@@ -27,7 +27,7 @@ private fun Routing.v1Post() {
 
     route("v1") {
         get("post") {
-            call.v1Post()
+            call.v1Post(this@route)
         }
     }
 }

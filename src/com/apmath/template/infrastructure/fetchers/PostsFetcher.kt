@@ -1,13 +1,14 @@
-package com.apmath.template.infrastructure.posts
+package com.apmath.template.infrastructure.fetchers
 
-import com.apmath.template.domain.posts.PostsFetcherInterface
+import com.apmath.template.domain.fetchers.PostsFetcherInterface
+import com.apmath.template.infrastructure.posts.Post
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
 import io.ktor.client.features.json.GsonSerializer
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.request.get
 
-class PostsFetcher: PostsFetcherInterface {
+class PostsFetcher : PostsFetcherInterface {
     // TODO: move client into another service
     val client: HttpClient = HttpClient(Apache) {
         install(JsonFeature) {

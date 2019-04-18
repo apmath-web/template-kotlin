@@ -1,4 +1,4 @@
-package com.apmath.template.domain.posts
+package com.apmath.template.domain.fetchers
 
 import com.apmath.template.infrastructure.posts.Post
 

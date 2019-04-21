@@ -4,3 +4,8 @@ jdk:
   - openjdk8
 script:
 - ./gradlew test
+- docker build -t template_kotlin .
+- docker run -d -p 8080:8080 --name template_kotlin_container template_kotlin
+- docker stop template_kotlin_container
+- docker rm template_kotlin_container
+- docker rmi template_kotlin

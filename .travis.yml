@@ -5,7 +5,8 @@ jdk:
 script:
 - ./gradlew test
 - docker build -t template_kotlin .
-- docker run -d -p 8080:8080 --name template_kotlin_container template_kotlin
+- docker run -d -p 8080:8080 --name template_kotlin_container template_kotlin && sleep 10
+- curl http://127.0.0.1:8080/v1/info
 - docker stop template_kotlin_container
 - docker rm template_kotlin_container
 - docker rmi template_kotlin

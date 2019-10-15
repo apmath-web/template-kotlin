@@ -51,6 +51,8 @@ dependencies {
     testCompile "io.ktor:ktor-server-tests:$ktor_version"
     testCompile "io.ktor:ktor-client-mock:$ktor_version"
     testCompile "io.ktor:ktor-client-mock-jvm:$ktor_version"
+    testCompile "io.ktor:ktor-client-mock-js:$ktor_version"
+    testCompile "io.ktor:ktor-client-mock-native:$ktor_version"
 }
 
 task fatJar(type: Jar) {

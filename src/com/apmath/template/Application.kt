@@ -1,7 +1,7 @@
 package com.apmath.template
 
 import com.apmath.template.application.v1.v1
-import com.apmath.template.com.apmath.template.infrastructure.template
+import com.apmath.template.infrastructure.template
 import io.ktor.application.Application
 import io.ktor.application.install
 import io.ktor.features.ContentNegotiation

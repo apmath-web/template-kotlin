@@ -1,4 +1,4 @@
-package com.apmath.template.com.apmath.template.infrastructure
+package com.apmath.template.infrastructure
 
 import com.apmath.template.domain.fetchers.PostsFetcherInterface
 import com.apmath.template.domain.services.PostsService

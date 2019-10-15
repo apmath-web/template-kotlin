@@ -1,28 +1,38 @@
-package com.apmath
+package com.apmath.template
 
-import io.ktor.http.*
-import io.ktor.client.*
-import io.ktor.client.request.*
-import kotlinx.coroutines.*
-import kotlin.test.*
-import io.ktor.client.engine.mock.*
-import kotlinx.coroutines.io.*
-import io.ktor.client.call.*
+import io.ktor.client.HttpClient
+import io.ktor.client.call.call
+import io.ktor.client.engine.mock.MockEngine
+import io.ktor.client.engine.mock.respond
+import io.ktor.client.engine.mock.respondError
+import io.ktor.client.request.get
+import io.ktor.http.HttpStatusCode
+import io.ktor.http.headersOf
+import kotlinx.coroutines.io.ByteReadChannel
+import kotlinx.coroutines.runBlocking
+import kotlin.test.assertEquals
 
 class ApplicationTest {
 
     // TODO example of complex test with client mock
     fun testClientMock() {
         runBlocking {
-            val client = HttpClient(MockEngine {
-                if (url.encodedPath == "/") {
-                    MockHttpResponse(call, HttpStatusCode.OK, ByteReadChannel(byteArrayOf(1, 2, 3)), headersOf("X-MyHeader", "MyValue"))
-                } else {
-                    responseError(HttpStatusCode.NotFound, "Not Found ${url.encodedPath}")
+            val client = HttpClient(MockEngine) {
+                engine {
+                    addHandler { request ->
+                        when (request.url.encodedPath) {
+                            "/" -> respond(
+                                ByteReadChannel(byteArrayOf(1, 2, 3)),
+                                HttpStatusCode.OK,
+                                headersOf("X-MyHeader", "MyValue")
+                            )
+                            else -> respondError(HttpStatusCode.NotFound, "Not Found ${request.url.encodedPath}")
+                        }
+
+                    }
                 }
-            }) {
-                expectSuccess = false
             }
+
             assertEquals(byteArrayOf(1, 2, 3).toList(), client.get<ByteArray>("/").toList())
             assertEquals("MyValue", client.call("/").response.headers["X-MyHeader"])
             assertEquals("Not Found other/path", client.get<String>("/other/path"))

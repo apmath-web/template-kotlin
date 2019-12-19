@@ -2,7 +2,7 @@ buildscript {
     repositories {
         jcenter()
     }
-    
+
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
@@ -25,33 +25,33 @@ sourceSets {
 repositories {
     mavenLocal()
     jcenter()
-    maven { url 'https://kotlin.bintray.com/ktor' }
+    maven { url "https://kotlin.bintray.com/ktor" }
     maven { url "https://jitpack.io" }
 }
 
 dependencies {
-    compile "com.github.apmath-web:validation:master-SNAPSHOT"
-    compile "org.koin:koin-ktor:$koin_version"
-    compile "org.koin:koin-logger-slf4j:$koin_version"
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    compile "ch.qos.logback:logback-classic:$logback_version"
-    compile "io.ktor:ktor-server-netty:$ktor_version"
-    compile "io.ktor:ktor-server-core:$ktor_version"
-    compile "io.ktor:ktor-locations:$ktor_version"
-    compile "io.ktor:ktor-metrics:$ktor_version"
-    compile "io.ktor:ktor-server-host-common:$ktor_version"
-    compile "io.ktor:ktor-gson:$ktor_version"
-    compile "io.ktor:ktor-client-core:$ktor_version"
-    compile "io.ktor:ktor-client-apache:$ktor_version"
-    compile "io.ktor:ktor-client-core-jvm:$ktor_version"
-    compile "io.ktor:ktor-client-json-jvm:$ktor_version"
-    compile "io.ktor:ktor-client-gson:$ktor_version"
-    compile "io.ktor:ktor-client-logging-jvm:$ktor_version"
-    testCompile "io.ktor:ktor-server-tests:$ktor_version"
-    testCompile "io.ktor:ktor-client-mock:$ktor_version"
-    testCompile "io.ktor:ktor-client-mock-jvm:$ktor_version"
-    testCompile "io.ktor:ktor-client-mock-js:$ktor_version"
-    testCompile "io.ktor:ktor-client-mock-native:$ktor_version"
+    implementation "com.github.apmath-web:validation:master-SNAPSHOT"
+    implementation "org.koin:koin-ktor:$koin_version"
+    implementation "org.koin:koin-logger-slf4j:$koin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "ch.qos.logback:logback-classic:$logback_version"
+    implementation "io.ktor:ktor-server-netty:$ktor_version"
+    implementation "io.ktor:ktor-server-core:$ktor_version"
+    implementation "io.ktor:ktor-locations:$ktor_version"
+    implementation "io.ktor:ktor-metrics:$ktor_version"
+    implementation "io.ktor:ktor-server-host-common:$ktor_version"
+    implementation "io.ktor:ktor-gson:$ktor_version"
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-client-apache:$ktor_version"
+    implementation "io.ktor:ktor-client-core-jvm:$ktor_version"
+    implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
+    implementation "io.ktor:ktor-client-gson:$ktor_version"
+    implementation "io.ktor:ktor-client-logging-jvm:$ktor_version"
+    testImplementation "io.ktor:ktor-server-tests:$ktor_version"
+    testImplementation "io.ktor:ktor-client-mock:$ktor_version"
+    testImplementation "io.ktor:ktor-client-mock-jvm:$ktor_version"
+    testImplementation "io.ktor:ktor-client-mock-js:$ktor_version"
+    testImplementation "io.ktor:ktor-client-mock-native:$ktor_version"
 }
 
 task fatJar(type: Jar) {
